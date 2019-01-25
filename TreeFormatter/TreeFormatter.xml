@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TreeFormatter</name>
+    </assembly>
+    <members>
+        <member name="T:TreeFormatter.HtmlFormatter">
+            <summary>
+            Defines the <see cref="T:TreeFormatter.HtmlFormatter" />
+            </summary>
+        </member>
+        <member name="M:TreeFormatter.HtmlFormatter.MinifyHtml(System.String)">
+            <summary>
+            Minifies an html string
+            </summary>
+            <param name="source">source html <see cref="T:System.String"/></param>
+            <returns>Minified html <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:TreeFormatter.HtmlFormatter.PrettifyHtml(System.String)">
+            <summary>
+            Prettifies an html string
+            </summary>
+            <param name="source">source html <see cref="T:System.String"/></param>
+            <returns>Prettified html <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:TreeFormatter.HtmlFormatter.AppendNode(System.Text.StringBuilder,HtmlAgilityPack.HtmlNode,System.Int32)">
+            <summary>
+            Recursively appends html nodes
+            </summary>
+            <param name="stringBuilder">The stringBuilder<see cref="T:System.Text.StringBuilder"/></param>
+            <param name="node">The node<see cref="T:HtmlAgilityPack.HtmlNode"/></param>
+            <param name="indentLevel">The indentLevel<see cref="T:System.Int32"/></param>
+            <returns>The <see cref="T:System.Text.StringBuilder"/></returns>
+        </member>
+        <member name="T:TreeFormatter.JsonFormatter">
+            <summary>
+            Defines the <see cref="T:TreeFormatter.JsonFormatter" />
+            </summary>
+        </member>
+        <member name="M:TreeFormatter.JsonFormatter.PrettifyJson(System.String)">
+            <summary>
+            Prettifies a json string
+            </summary>
+            <param name="source">source json <see cref="T:System.String"/></param>
+            <returns>prettiefied json <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:TreeFormatter.JsonFormatter.MinifyJson(System.String)">
+            <summary>
+            Minifies a json string
+            </summary>
+            <param name="source">source json <see cref="T:System.String"/></param>
+            <returns>minified json <see cref="T:System.String"/></returns>
+        </member>
+        <member name="T:TreeFormatter.XmlFormatter">
+            <summary>
+            Defines the <see cref="T:TreeFormatter.XmlFormatter" />
+            </summary>
+        </member>
+        <member name="M:TreeFormatter.XmlFormatter.MinifyXml(System.String)">
+            <summary>
+            Minifies an Xml string
+            </summary>
+            <param name="source">source xml <see cref="T:System.String"/></param>
+            <returns>minified xml <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:TreeFormatter.XmlFormatter.PrettifyXml(System.String)">
+            <summary>
+            Prettifies an Xml string
+            </summary>
+            <param name="source">source xml <see cref="T:System.String"/></param>
+            <returns>Prettified xml <see cref="T:System.String"/></returns>
+        </member>
+    </members>
+</doc>

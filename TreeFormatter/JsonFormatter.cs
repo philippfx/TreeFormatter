@@ -1,20 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
-namespace TreeFormatter
+﻿namespace TreeFormatter
 {
+    using Newtonsoft.Json.Linq;
+    using System.Text.RegularExpressions;
+
+    /// <summary>
+    /// Defines the <see cref="JsonFormatter" />
+    /// </summary>
     public static class JsonFormatter
     {
+        /// <summary>
+        /// Prettifies a json string
+        /// </summary>
+        /// <param name="source">source json <see cref="string"/></param>
+        /// <returns>prettiefied json <see cref="string"/></returns>
         public static string PrettifyJson(this string source)
         {
             return JToken.Parse(source).ToString();
-            //return JsonConvert.SerializeObject(source, Formatting.Indented);
         }
 
+        /// <summary>
+        /// Minifies a json string
+        /// </summary>
+        /// <param name="source">source json <see cref="string"/></param>
+        /// <returns>minified json <see cref="string"/></returns>
         public static string MinifyJson(this string source)
         {
             return Regex.Replace(source, @"(""(?:[^""\\]|\\.)*"")|\s+", "$1");

@@ -1,20 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Text;
-using System.Text.RegularExpressions;
-using HtmlAgilityPack;
-
-namespace TreeFormatter
+﻿namespace TreeFormatter
 {
+    using HtmlAgilityPack;
+    using System;
+    using System.Text;
+    using System.Text.RegularExpressions;
+
+    /// <summary>
+    /// Defines the <see cref="HtmlFormatter" />
+    /// </summary>
     public static class HtmlFormatter
     {
-
+        /// <summary>
+        /// Minifies an html string
+        /// </summary>
+        /// <param name="source">source html <see cref="string"/></param>
+        /// <returns>Minified html <see cref="string"/></returns>
         public static string MinifyHtml(this string source)
         {
             var redundantHtmlWhitespace = new Regex(@"(?<=>)\s+?(?=<)");
             return redundantHtmlWhitespace.Replace(source, String.Empty).Trim();
         }
+
+        /// <summary>
+        /// Prettifies an html string
+        /// </summary>
+        /// <param name="source">source html <see cref="string"/></param>
+        /// <returns>Prettified html <see cref="string"/></returns>
         public static string PrettifyHtml(this string source)
         {
             var htmlDocument = new HtmlDocument();
@@ -30,7 +41,13 @@ namespace TreeFormatter
             return stringBuilder.ToString();
         }
 
-        [ExcludeFromCodeCoverage] // Covered by tests except the early exits for checking parameters
+        /// <summary>
+        /// Recursively appends html nodes
+        /// </summary>
+        /// <param name="stringBuilder">The stringBuilder<see cref="StringBuilder"/></param>
+        /// <param name="node">The node<see cref="HtmlNode"/></param>
+        /// <param name="indentLevel">The indentLevel<see cref="int"/></param>
+        /// <returns>The <see cref="StringBuilder"/></returns>
         private static StringBuilder AppendNode(StringBuilder stringBuilder, HtmlNode node, int indentLevel)
         {
             // check parameter
